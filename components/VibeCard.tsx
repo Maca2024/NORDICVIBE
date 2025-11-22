@@ -68,21 +68,21 @@ export const VibeCard: React.FC<VibeCardProps> = ({ data, onReset }) => {
         >
             ← GO AGAIN
         </button>
-        <div className="flex space-x-4">
+        <div className="flex space-x-3">
             {data.imageUrl && (
                 <button 
                     onClick={handleDownload}
-                    className="p-2 rounded-full hover:bg-white/10 text-white transition-colors"
-                    title="Download Image"
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-ruka-green text-white border border-white/10 hover:border-ruka-green transition-all duration-300 group"
+                    title="Save Image"
                 >
-                    <Download className="w-6 h-6" />
+                    <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </button>
             )}
-            <button className="p-2 rounded-full hover:bg-white/10 text-ruka-green transition-colors">
-                <Heart className="w-6 h-6" />
+            <button className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-pink-500 text-white border border-white/10 hover:border-pink-500 transition-all duration-300 group">
+                <Heart className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </button>
-            <button className="p-2 rounded-full hover:bg-white/10 text-white transition-colors">
-                <Share2 className="w-6 h-6" />
+            <button className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-blue-500 text-white border border-white/10 hover:border-blue-500 transition-all duration-300 group">
+                <Share2 className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </button>
         </div>
       </div>
