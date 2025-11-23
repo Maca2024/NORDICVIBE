@@ -68,14 +68,15 @@ export const VibeCard: React.FC<VibeCardProps> = ({ data, onReset }) => {
         >
             ← GO AGAIN
         </button>
-        <div className="flex space-x-3">
+        <div className="flex space-x-3 items-center">
             {data.imageUrl && (
                 <button 
                     onClick={handleDownload}
-                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-ruka-green text-white border border-white/10 hover:border-ruka-green transition-all duration-300 group"
+                    className="flex items-center space-x-2 px-4 py-2 rounded-full bg-ruka-green text-ruka-dark font-bold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-ruka-green/50"
                     title="Save Image"
                 >
-                    <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    <Download className="w-4 h-4" />
+                    <span className="text-xs tracking-wider">SAVE</span>
                 </button>
             )}
             <button className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-pink-500 text-white border border-white/10 hover:border-pink-500 transition-all duration-300 group">

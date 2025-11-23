@@ -1,13 +1,8 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import { VibeResponse } from "../types";
 
-// Ensure API Key is present
-const apiKey = process.env.API_KEY;
-if (!apiKey) {
-  console.error("API_KEY is missing from environment variables.");
-}
-
-const ai = new GoogleGenAI({ apiKey: apiKey || 'dummy-key' });
+// Initialize the Gemini API client strictly with the environment variable
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const SYSTEM_INSTRUCTION = `
 You are Oku, the "Ruka Reindeer". You are a Gen Z icon, a local influencer in Ruka, Finland.
@@ -22,8 +17,6 @@ When the user gives you a prompt:
 `;
 
 export const generateVibeCheck = async (prompt: string): Promise<VibeResponse> => {
-  if (!apiKey) throw new Error("API Key not found");
-
   try {
     // 1. Generate Text Response (The "Rizz")
     const textResponse: GenerateContentResponse = await ai.models.generateContent({
